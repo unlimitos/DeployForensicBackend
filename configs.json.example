@@ -1,0 +1,255 @@
+{
+    "ServerAddr": "10.27.0.2",
+    "ServerPort":9191,
+    "UseMongdb":false,
+    "MongodbUri":"mongodb://0.0.0.0:27017",
+    "MongodbDatabase":"forensistor_db",
+    "UseRedis":false,
+    "RedisDefaultAddr":"0.0.0.0:6379",
+    "JWTSecretKey":"Nocmt.forensistor.secret",
+    "JWTAccessExpirationMinutes":1440,
+    "JWTRefreshExpirationDays":7,
+    "Mode":"debug",
+    "UseElastic": true,
+    "ElasticUri":"http://10.27.0.2:9200",
+    "ElasticUsername":"elastic",
+    "ElasticPassword":"EsNocmt2024",
+    "ElasticIndices": [
+        {
+            "alias" : "EvenLogs",
+            "index" : "ServiceLogs"
+            
+        },
+        {
+            "alias" : "EvenLogs",
+            "index" : "DeleteLogs"
+        },
+        {
+            "alias" : "EvenLogs",
+            "index" : "StopServiceLogs"
+        },
+        {
+            "alias" : "EvenLogs",
+            "index" : "UnkownCommandParameterLogs"
+        },
+        {
+            "alias" : "EvenLogs",
+            "index" : "PowershellEventCommandLogs"
+        },
+        {
+            "alias" : "EvenLogs",
+            "index" : "RegistryLogs"
+        },
+        {
+            "alias" : "EvenLogs",
+            "index" : "FileLogs"
+        }
+        ,
+        {
+            "alias" : "EvenLogs",
+            "index" : "ShareResourceLogs"
+        },
+        {
+            "alias" : "EvenLogs",
+            "index" : "WMIConnectLogs"
+        },
+        {
+            "alias" : "EvenLogs",
+            "index" : "TaskcheduleLogs"
+        },
+        {
+            "alias" : "EvenLogs",
+            "index" : "ScTcbPrivilege"
+        },
+        {
+            "alias" : "EvenLogs",
+            "index" : "LogonLogs"
+        },
+        {
+            "alias" : "EvenLogs",
+            "index" : "LogonFailLogs"
+        },
+        {
+            "alias" : "EvenLogs",
+            "index" : "ChangeUserLogs"
+        },
+        {
+            "alias" : "EvenLogs",
+            "index" : "ChangeGroupLogs"
+        },
+        {
+            "alias" : "EvenLogs",
+            "index" : "ActiveDirectoryLogs"
+        },
+        {
+            "alias" : "EvenLogs",
+            "index" : "ChangeTimeLogs"
+        },
+        
+        {
+            "alias" : "Processes_Schedule",
+            "index" : "SystemServices"
+        },
+        {
+            "alias" : "Processes_Schedule",
+            "index" : "SystemProcess"
+        },
+        {
+            "alias" : "Processes_Schedule",
+            "index" : "StartupProgs"
+        },
+        {
+            "alias" : "Processes_Schedule",
+            "index" : "ScheduledTask"
+        },
+        {
+            "alias" : "Processes_Schedule",
+            "index" : "ScheduledTask2"
+        },
+
+        {
+            "alias" : "Networks",
+            "index" : "DNSCache"
+        },
+        {
+            "alias" : "Networks",
+            "index" : "NetworkAdapter"
+        },
+        {
+            "alias" : "Networks",
+            "index" : "IPConfiguration"
+        },
+        {
+            "alias" : "Networks",
+            "index" : "NetIPAddress"
+        },
+        {
+            "alias" : "Networks",
+            "index" : "NetAdapter"
+        },
+        {
+            "alias" : "Networks",
+            "index" : "NetNeighbor"
+        },
+        {
+            "alias" : "Networks",
+            "index" : "NetTCPConnect"
+        },
+        {
+            "alias" : "Networks",
+            "index" : "WlanPasswords"
+        },
+        {
+            "alias" : "Networks",
+            "index" : "FirewallRule"
+        },
+        {
+            "alias" : "Networks",
+            "index" : "SMBSessions"
+        },
+        {
+            "alias" : "Networks",
+            "index" : "SMBShares"
+        },
+        {
+            "alias" : "Networks",
+            "index" : "NetHops"
+        },
+        {
+            "alias" : "Networks",
+            "index" : "AdaptHops"
+        },
+        {
+            "alias" : "Networks",
+            "index" : "IpHops"
+        },
+        
+        {
+            "alias" : "Users_Accounts",
+            "index" : "currentuser"
+        },
+        {
+            "alias" : "Users_Accounts",
+            "index" : "systemname"
+        },
+        {
+            "alias" : "Users_Accounts",
+            "index" : "logonsession"
+        },
+        {
+            "alias" : "Users_Accounts",
+            "index" : "currentlogonsession"
+        },
+        {
+            "alias" : "Users_Accounts",
+            "index" : "userprocesses"
+        },
+        {
+            "alias" : "Users_Accounts",
+            "index" : "AdminGroups"
+        },
+        {
+            "alias" : "Users_Accounts",
+            "index" : "LocalGroup"
+        },
+        
+        {
+            "alias" : "InstalledPrograms",
+            "index" : "InstallPrograms"
+        },
+        {
+            "alias" : "InstalledPrograms",
+            "index" : "UninstallPrograms"
+        },
+        
+        
+        {
+            "alias" : "Peripheral",
+            "index" : "LogicalDrives"
+        },
+        {
+            "alias" : "Peripheral",
+            "index" : "USBDevices"
+        },
+        {
+            "alias" : "Peripheral",
+            "index" : "Imagedevice"
+        },
+        {
+            "alias" : "Peripheral",
+            "index" : "UPNPDevices"
+        },
+        {
+            "alias" : "Peripheral",
+            "index" : "UnknownDrives"
+        },
+        {
+            "alias" : "Peripheral",
+            "index" : "LinkFiles180days"
+        },
+        {
+            "alias" : "Peripheral",
+            "index" : "PSHistory500"
+        },
+        {
+            "alias" : "Peripheral",
+            "index" : "DownloadsFiles"
+        },
+        {
+            "alias" : "Peripheral",
+            "index" : "HiddenExecs1"
+        },
+        {
+            "alias" : "Peripheral",
+            "index" : "HiddenExecs2"
+        },
+        {
+            "alias" : "Peripheral",
+            "index" : "HiddenExecs3"
+        },
+        {
+            "alias" : "Peripheral",
+            "index" : "HiddenExecs4"
+        }
+    ]
+}
