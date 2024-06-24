@@ -1,0 +1,1 @@
+powershell.exe -NonInteractive -NoLogo -NoProfile -ExecutionPolicy Bypass -File ".\ForensicatorNoc.ps1"
