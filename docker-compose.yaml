@@ -51,9 +51,8 @@ services:
           reservations:
             cpus: '1.0'
   server:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: unlimitos/forensicbackend-server:v1
+    container_name: forensicbackend-services
     ports:
         - 10.27.0.2:9191:9191
     volumes:

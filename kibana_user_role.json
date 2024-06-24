@@ -1,0 +1,27 @@
+{
+    "cluster": ["monitor", "manage_index_templates", "manage_ingest_pipelines", "read_pipeline", "cluster:monitor/ingest/pipeline/stats","manage","manage_security","manage_api_key"],
+    "indices": [
+      {
+        "names": [".kibana*", ".reporting-*", ".apm-agent-configuration", ".apm-custom-link"],
+        "privileges": ["create_index","manage","all"],
+        "allow_restricted_indices": true
+      },
+      {
+        "names": ["*"],
+        "privileges": ["view_index_metadata", "read","write"],
+        "allow_restricted_indices": true
+      }
+    ],
+    "applications": [
+      {
+        "application": "kibana-.kibana",
+        "privileges": ["read_security","manage_security","all"],
+        "resources": ["*"]
+      }
+    ],
+    "run_as": [],
+    "metadata": {},
+    "transient_metadata": {
+      "enabled": true
+    }
+  }

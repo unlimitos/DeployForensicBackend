@@ -1,5 +1,5 @@
 {
-    "ServerAddr": "10.27.0.2",
+    "ServerAddr": "0.0.0.0",
     "ServerPort":9191,
     "UseMongdb":false,
     "MongodbUri":"mongodb://0.0.0.0:27017",
