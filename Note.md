@@ -33,7 +33,6 @@ GET ipconfiguration/_search
     "values.Description"
   ]
 }
-#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
 
 #Push to hub
 docker tag forensicbackend-server unlimitos/forensicbackend-server:v1
