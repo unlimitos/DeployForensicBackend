@@ -15,7 +15,7 @@
     "applications": [
       {
         "application": "kibana-.kibana",
-        "privileges": ["read_security","manage_security","all"],
+        "privileges": ["read_security","manage_security","create_index","manage","all"],
         "resources": ["*"]
       }
     ],

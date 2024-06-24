@@ -1,7 +1,7 @@
 root@speedtest:/home/huytq/ForensicBackend/ForensicBackend# docker ps
 CONTAINER ID   IMAGE                                                 COMMAND                  CREATED          STATUS          PORTS                                                NAMES
 6233814a3b14   forensicbackend-server                                "./forensic_services"    44 minutes ago   Up 44 minutes   10.27.0.2:9191->9191/tcp                             forensicbackend-server-1
-9ea8ead166f9   docker.elastic.co/elasticsearch/elasticsearch:8.7.1   "/bin/tini -- /usr/l…"   44 minutes ago   Up 44 minutes   10.27.0.2:9200->9200/tcp, 10.27.0.2:9300->9300/tcp   elasticsearch
+06f0351c3750   docker.elastic.co/elasticsearch/elasticsearch:8.7.1   "/bin/tini -- /usr/l…"   44 minutes ago   Up 44 minutes   10.27.0.2:9200->9200/tcp, 10.27.0.2:9300->9300/tcp   elasticsearch
 8d2f123b156d   docker.elastic.co/kibana/kibana:8.7.1                 "/bin/tini -- /usr/l…"   44 minutes ago   Up 4 minutes    10.27.0.2:5601->5601/tcp                             kibana
 
 
@@ -35,6 +35,10 @@ nano kibana_user_role.json
     }
   }
 
+
+docker cp kibana_user_role.json 06f0351c3750:/usr/share/elasticsearch/kibana_user_role.json
+
+docker exec -u 0 -it 06f0351c3750 /bin/bash
 curl -X PUT "localhost:9200/_security/role/kibana_user_role" -H "Content-Type: application/json" -d @kibana_user_role.json -u elastic:EsNocmt2024
 
 curl -X POST "localhost:9200/_security/user/nocmt" -H "Content-Type: application/json" -d '
@@ -45,3 +49,4 @@ curl -X POST "localhost:9200/_security/user/nocmt" -H "Content-Type: application
   "email" : "kibana_user@example.com"
 }' -u elastic:EsNocmt2024
 
+//
