@@ -11,7 +11,7 @@
     "JWTRefreshExpirationDays":7,
     "Mode":"debug",
     "UseElastic": true,
-    "ElasticUri":"http://10.27.0.2:9200",
+    "ElasticUri":"http://10.52.17.251:9200",
     "ElasticUsername":"elastic",
     "ElasticPassword":"EsNocmt2024",
     "ElasticIndices": [
