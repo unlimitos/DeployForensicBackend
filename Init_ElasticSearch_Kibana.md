@@ -36,9 +36,9 @@ nano kibana_user_role.json
   }
 
 
-docker cp kibana_user_role.json 06f0351c3750:/usr/share/elasticsearch/kibana_user_role.json
+docker cp kibana_user_role.json 85b3a408ff01:/usr/share/elasticsearch/kibana_user_role.json
 
-docker exec -u 0 -it 06f0351c3750 /bin/bash
+docker exec -u 0 -it d3a910fafda7 /bin/bash
 curl -X PUT "localhost:9200/_security/role/kibana_user_role" -H "Content-Type: application/json" -d @kibana_user_role.json -u elastic:EsNocmt2024
 
 curl -X POST "localhost:9200/_security/user/nocmt" -H "Content-Type: application/json" -d '
@@ -49,4 +49,3 @@ curl -X POST "localhost:9200/_security/user/nocmt" -H "Content-Type: application
   "email" : "kibana_user@example.com"
 }' -u elastic:EsNocmt2024
 
-//
