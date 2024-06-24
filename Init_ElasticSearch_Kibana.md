@@ -36,16 +36,23 @@ nano kibana_user_role.json
   }
 
 
-docker cp kibana_user_role.json 47fc6c52d967:/usr/share/elasticsearch/kibana_user_role.json
+docker cp kibana_user_role.json d42fd225a8f5:/usr/share/elasticsearch/kibana_user_role.json
 
-docker exec -u 0 -it 47fc6c52d967 /bin/bash
+docker exec -u 0 -it d42fd225a8f5 /bin/bash
 curl -X PUT "localhost:9200/_security/role/kibana_user_role" -H "Content-Type: application/json" -d @kibana_user_role.json -u elastic:EsNocmt2024
 
 curl -X POST "localhost:9200/_security/user/nocmt" -H "Content-Type: application/json" -d '
 {
   "password" : "EsNocmt2024",
-  "roles" : [ "kibana_user_role" ],
+  "roles" : [ "kibana_user_role","kibana_system","logstash_system","beats_system","apm_system","remote_monitoring_collector", "remote_monitoring_agent" ],
   "full_name" : "Nocmt User",
   "email" : "kibana_user@example.com"
 }' -u elastic:EsNocmt2024
 
+curl -X PUT "localhost:9200/_security/user/nocmt" -H "Content-Type: application/json" -d '
+{
+  "password" : "EsNocmt2024",
+  "roles" : [ "kibana_user_role","kibana_system","logstash_system","beats_system","apm_system","remote_monitoring_collector", "remote_monitoring_agent" ],
+  "full_name" : "Nocmt User",
+  "email" : "kibana_user@example.com"
+}' -u elastic:EsNocmt2024
